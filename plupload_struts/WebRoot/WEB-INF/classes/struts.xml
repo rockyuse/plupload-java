@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--struts2默认上传每个小文件最大值2M 可以适当增大 -->
+	<constant name= "struts.multipart.maxSize" value="5242880" />
+	
+	<package name="edu.action" extends="struts-default">
+		
+		<action name ="FileUpload" class ="com.rock.FileUploadAction" method="upload">
+			<param name="savePath">/fileUpload</param>
+			<result name ="success">/result.jsp</result> <!--这个返回页面无所谓的，不刷新的 -->
+        </action >
+        <action name ="Submit" class ="com.rock.FileUploadAction" method="submit">
+           	<param name="savePath">/fileUpload</param>
+            <result name ="success">/result.jsp</result>
+        </action >
+	</package>
+</struts>    
